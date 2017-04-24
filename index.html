@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Mind Map - Project 2</title>
+	<style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+        * {
+            margin: 0%;
+        }
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12pt;
+            background-image: url("media/bg.png");
+            background: cover;
+        }
+        section{
+            float: left;
+            padding: 10px;
+            width: 200px;
+            height: 100%;
+        }
+        canvas{ 
+           float: right;
+           position: fixed;
+        }  
+        h1{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 18pt;
+            color: #1C6AA3;
+        }
+        h2{
+            font-family: 'Open Sans', sans-serif;
+            font-size: 14pt
+        }
+        div span{
+            display: block;
+            padding-bottom: 20px;
+        }     
+        #controls{
+            padding: 20px 0px 20px 0px;
+        }
+        #directions{
+             padding: 20px 0px 20px 0px;
+        }
+        #audio{display:none}
+    </style>
+</head>
+<body>
+    <section>
+    <h1>Thought Bubble</h1>
+        <div id = "controls">
+        
+        <label>Tool:</label>
+            <span>
+            <select id="toolSelection">
+                <option value="pointer">Pointer</option>
+                <option value="add">New Bubble</option>
+                <option value="delete">Delete Bubble</option>
+            </select>
+            </span>
+            <label>Shape:</label>
+            <span>
+            <select id="shapeSelection">
+                <option value="circle">Circle</option>
+                <option value="rect">Rect</option>
+                <option value="triangle">Triangle</option>
+            </select>
+            </span>
+            <label>Color:</label>
+            <span>
+            <select id="colorSelection">
+                <option value="0">Blue</option>
+                <option value="1">Green</option>
+                <option value="2">Light Blue</option>
+                <option value="3">Purple</option>
+                <option value="4">Yellow</option>
+                <option value="5">Orange</option>
+                <option value="6">Peach</option>    
+            </select>
+            </span>
+            <span>
+            <label>Line Weight</label>
+            <input type="text" name="lineWeight" id="lineWeight" value=5>
+            </span>
+            <span>
+                <label>Sound</label>
+                <input type="checkbox" name="soundBox" id="soundBox" value= true checked>
+            </span>
+            <div id="directions">       
+                <span>
+                    <h2>Directions:</h2>
+                    <hr/>
+                    </span>
+                
+                      <p>Pointer: Used to select/deselect bubbls. When bubble is selected you may edit text by typing</p>
+                    
+                      <p>New Bubble: Click anywhere on the canvas to place a new bubble</p>
+                      
+                    <p>Delete Bubble: Click a bubble to remove it</p>
+                            
+                    <p>Color: changes the color of future bubbles</p>
+                               
+                    <p>Line Weight: Enter a number and hit enter to change the width of the lines</p>
+                    
+    
+            </div>
+        </div>
+    </section>
+	<canvas></canvas>
+     <script src='JS/utilities.js'></script>
+    <script src='JS/loader.js'></script>
+	<script src='JS/main.js'></script>
+    <script src='JS/sound.js'></script>
+    <script src='JS/keys.js'></script>
+    <div id="audio">
+    <audio id="bgAudio" src="media/blue_jeans.mp3" controls loop></audio>
+    <audio id="effectAudio" controls></audio>
+    </div>
+</body>
+</html>
