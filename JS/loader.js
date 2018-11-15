@@ -11,50 +11,44 @@
 //Loader JS - Loads app and appropirate javascript files
 "use strict";
 
-
 var app = app || {};
 
-
 window.onload = function(){
+ 
+    
+    
 	console.log("window.onload called");
-    app.sound.init();
-    app.main.sound = app.sound;
+   // app.sound.init();
+   // app.main.sound = app.sound;
     app.main.init();
-    document.querySelector("#toolSelection").onchange = function(e){
-				switch(e.target.value){
-                 case 'pointer':
-                     app.main.toolState =  app.main.TOOL_STATE.POINTER;
-                     break;
-                 case 'add':
-                     app.main.toolState = app.main.TOOL_STATE.NEWBUBBLE;
-                     break;
-                case 'delete':
-                     app.main.toolState = app.main.TOOL_STATE.DELETINGBUBBLE;
-                     break;
-                 default:
-                     app.main.toolState = app.main.TOOL_STATE.POINTER;
-                     break;
-             }
-			};
-    document.querySelector("#colorSelection").onchange = function(e){
-             app.main.BUBBLE.sColor = app.main.color[e.target.value];
-             };
-    document.querySelector("#shapeSelection").onchange = function(e){
-             app.main.BUBBLE.shape = e.target.value;
-             }; 
-    document.querySelector("#lineWeight").onchange = function(e){
-            app.main.BUBBLE.sWeight = e.target.value;
-        };
-    document.querySelector("#soundBox").onchange = function(e){
+    
+//CANVAS CONTROLLS
+/*document.getElementById('pointer').addEventListener('click', function(e){
+   app.main.toolState = app.main.TOOL_STATE.POINTER;
+})
+document.getElementById('plusMin').addEventListener('click', function(e){
+    app.main.toolState = app.main.TOOL_STATE.NEWBUBBLE;
+})
+document.getElementById('color').addEventListener('click', function(e){
+    app.main.toolState = app.main.TOOL_STATE.DELETINGBUBBLE;
+})
+document.getElementById('shape').addEventListener('click', function(e){
+   
+})
+document.getElementById('font').addEventListener('click', function(e){
+   
+})*/
+   /* document.getElementById("soundBox").onclick = function(e){
        if(e.target.checked){
-           app.sound.playBGAudio();
-           app.main.music = true;
+           //app.sound.playBGAudio();
+           //app.sound.playBGAudio();
+         //  app.main.music = true;
        }
       else{
-          app.sound.stopBGAudio();
-          app.main.music = false;
+          //app.sound.stopBGAudio();
+        //  app.main.music = false;
       }
     };
-    
+    */
   // window.addEventListener('resize',app.main.canvasSize(app.main.canvas), false);
 };

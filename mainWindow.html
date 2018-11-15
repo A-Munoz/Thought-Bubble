@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>Mind Map - Project 2</title>
+	<link rel="stylesheet" href="css/mainCSS.css">
+</head>
+<body>
+    <div id="overlay">
+        <div id="console">
+            <div id="input">
+            <button id="exit"><img src="media/exitIcon.svg"></button>
+            <div class="gradient" style="width:300px; margin:0 100px 40px 100px">
+            <input type ="text" id="title" value="New Bubble"></div>
+                <h1>Bubble Color</h1>
+            <div class="gradient"><input type="text" name="bubbleColor" id="bColor" value="#656D78"></div>
+            <h1>Bubble Content</h1><h2>Char Limit:0/150</h2>
+                <div class="gradient"><textarea type="text" name="bubbleContent" id="bContent" value="Type here..." maxlength="150" cols="10" rows="10" placeholder="Bubble Content..."></textarea></div>
+            <div class="gradient"><textarea type="text" name="bubbleNotes" id="bNotes" value="Extra Notes" cols="10" rows="3" placeholder="Notes..."></textarea></div>
+                <button id="submit">Apply</button>
+            </div>
+        </div>
+    </div>
+    <section>
+        <div id = "controls">
+            <button id="pointer" ><img src="media/pointer.svg"></button>
+            <button id="move" ><img src="media/moveicon.svg"></button>
+            <button id ="add" ><img src="media/addBubble.svg"></button>
+            <button id="minus" ><img src="media/minusBubble.svg"></button>
+            <button id="shape" ><img id="sImg" src="media/circleSquare.svg"></button>
+            <button id="font" style="opacity: .5;" disabled><img src="media/font.svg"></button>
+            <button id="line" style="opacity: .5;" disabled><img src="media/lines.svg"></button>
+            <button id="color" style="opacity: .5;" disabled><img src="media/color.svg"></button>
+            <button id="options" style="opacity: .5;" disabled><img  src="media/options.svg"></button>
+        </div>
+    </section>
+	<canvas id="mainCanvas"></canvas>
+     <script src='JS/utilities.js'></script>
+    <script src='JS/loader.js'></script>
+	<script src='JS/main.js'></script>
+
+    <script src='JS/keys.js'></script>
+     <script src='controls.js'></script>
+  
+</body>
+</html>

@@ -16,22 +16,22 @@ var app = app || {};
 
 
 app.sound = (function(){
-    console.log("sound.js module loaded");
+  /*  console.log("sound.js module loaded");
 	var bgAudio = undefined;
 	var effectAudio = undefined;
 	
 	function init(){
-		bgAudio = document.querySelector("#bgAudio");
+	/*	bgAudio = document.querySelector("#bgAudio");
 		bgAudio.volume=0.15;
-		effectAudio = document.querySelector("#effectAudio");
-		effectAudio.volume = 0.4;
+		//effectAudio = document.querySelector("#effectAudio");
+		//effectAudio.volume = 0.4;
 	}
 
-    function playBackground(){
+   /* function playBackground(){
         bgAudio.src = "media/blue_jeans.mp3";
         bgAudio.play();
     }
-    function stopBackground(){
+   / function stopBackground(){
 		bgAudio.pause();
 		bgAudio.currentTime = 0;
 	}
@@ -45,7 +45,7 @@ app.sound = (function(){
     init:init,
     stopBGAudio:stopBackground,
     playEffect:playEffect,
-    playBGAudio:playBackground,
+    //playBGAudio:playBackground,*/
 };
 	// TODO
 }());

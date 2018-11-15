@@ -20,17 +20,6 @@ function getMouse(e){
 };
 
  // FULL SCREEN MODE
-function requestFullscreen(element) {
-	if (element.requestFullscreen) {
-	  element.requestFullscreen();
-	} else if (element.mozRequestFullscreen) {
-	  element.mozRequestFullscreen();
-	} else if (element.mozRequestFullScreen) { 
-	  element.mozRequestFullScreen();
-	} else if (element.webkitRequestFullscreen) {
-	  element.webkitRequestFullscreen();
-	}
-};
 
 function pointInsideCircle(x,y,I){
     var dx=x-I.x;

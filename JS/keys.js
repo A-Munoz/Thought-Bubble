@@ -13,11 +13,40 @@
 "use strict";
 
 var myKeys = {};
+var app = app || {};
 
 
 myKeys.keydown = [];
 
 
+document.getElementById('pointer').onclick = function(e){
+    app.main.toolState = app.main.TOOL_STATE.POINTER
+}
+document.getElementById('move').onclick = function(e){
+    app.main.toolState = app.main.TOOL_STATE.HAND
+}
+document.getElementById('add').onclick = function(e){
+    app.main.toolState = app.main.TOOL_STATE.NEWBUBBLE
+}
+document.getElementById('minus').onclick = function(e){
+    app.main.toolState = app.main.TOOL_STATE.DELETINGBUBBLE
+}
+document.getElementById('shape').onclick = function(e){
+    if(app.main.BUBBLE.shape === 'circle'){
+        document.getElementById('sImg').src = "media/squareCircle.svg"
+        app.main.BUBBLE.shape = 'rect'
+    }
+    else app.main.BUBBLE.shape = 'circle'
+}
+document.getElementById('font').onclick = function(e){
+    
+}
+document.getElementById('line').onclick = function(e){
+    
+}
+document.getElementById('minus').onclick = function(e){
+    
+}
 
 window.addEventListener("keydown",function(e){
 	//console.log("keydown=" + e.keyCode);
@@ -29,15 +58,40 @@ window.addEventListener("keyup",function(e){
 	myKeys.keydown[e.keyCode] = false;
 	
 	// pausing and resuming
-	var char = String.fromCharCode(e.keyCode);
+    if(e.keyCode == 69){
+        
+    }
     if (app.main.toolState == app.main.TOOL_STATE.POINTER){
      //   console.log(app.main.BUBBLE.currentSelected);
         if(!(app.main.BUBBLE.currentSelected == undefined)){
-          /*  if(e.keyCode == 8){
-                app.main.removeText(app.main.BUBBLE.currentSelected);
-            }*/
             
-                app.main.addText(app.main.BUBBLE.currentSelected,char);
+             if(app.main.BUBBLE.currentSelected.text == 'Type Here....'){
+                    app.main.BUBBLE.currentSelected.text = '';
+                }
+            
+            console.log(app.main.BUBBLE.currentSelected)
+            if(e.keyCode == 8){
+                var bText = app.main.BUBBLE.currentSelected.text
+                bText = bText.split('');
+                bText.pop();
+                app.main.BUBBLE.currentSelected.text = '';
+                for(var n = 0; n < bText.length; n++) {
+                    
+                    app.main.BUBBLE.currentSelected.text += bText[n] + '';
+                }
+            }
+            else if(e.keyCode == 9){
+               app.main.BUBBLE.currentSelected.text += '    ';
+            }
+            else if(e.keyCode == 32){
+               app.main.BUBBLE.currentSelected.text += ' ';
+            }
+            else{
+                var char = String.fromCharCode(e.keyCode);
+                app.main.BUBBLE.currentSelected.text += char;
+                
+            }
+                app.main.addText(app.main.BUBBLE.currentSelected);
         }
 	}
 });

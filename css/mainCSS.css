@@ -1,0 +1,294 @@
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans|Raleway');
+        * {
+            margin: 0%;
+            
+        }
+
+        body{
+            width: 100%;
+            height: 100%;
+            font-family: 'Raleway', sans-serif;
+            font-size: 12pt;
+            background-color: '#656D78';
+            margin: 0;
+           
+        }
+
+        header{
+            height: 30px;
+            background-color: #e9573F;
+            color: white;
+            font-size: 16px;
+            width: 100%; 
+            -webkit-app-region: drag;
+            -webkit-user-select: none;
+        }
+
+       header #icon{
+            float: left;
+            padding: 0 10px 0 10px;
+            font-size: 16px;
+        }
+
+        header #windowControls{
+            float: right;
+            padding: 0 10px 0 10px;
+            font-size: 16px;
+             -webkit-app-region: no-drag;
+            -webkit-user-select: auto;
+}
+
+        header #windowControls button{
+            color: white;
+            outline: none;
+            background: none;
+            border: none;
+            padding: 0;
+              -webkit-app-region: no-drag;
+            -webkit-user-select: auto;
+        }
+      header #windowControls button:active{
+            background: white;
+        }
+      
+
+        section{
+            width:100%;
+            height: 100px;
+            z-index: 5;
+            position: absolute;
+            pointer-events: none;
+            margin-top: 2px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #mainCanvas{     
+           position: fixed;
+            cursor:url(../media/pointer.gif), auto;
+        }  
+        h1{
+            font-size: 18pt;
+            color: #1C6AA3;
+        }
+        h2{
+            font-size: 14pt
+        }
+        div span{
+            display: block;
+            padding-bottom: 20px;
+        } 
+
+        #controls{
+            background-color: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.4);
+            border-width: 2px;
+            border-style: none solid solid solid;
+            box-shadow: 0px 5px  5px rgba(1,1,1,0.2);
+            border-radius: 0 0 25px 25px;
+            padding: 10px;
+            width: 760px;    
+        }
+
+        #controls button{
+            width: 80px;
+            height: 80px;
+            outline: none;
+            background: none;
+            border: none;
+            padding: 0;
+            pointer-events: auto;  
+             cursor:url(../media/pointer.gif), auto;
+        }
+
+        #controls button:active {
+         
+        }
+
+        #directions{
+             padding: 20px 0px 20px 0px;
+        }
+
+        #audio{display:none}
+        
+        #overlay{
+            z-index: 7;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(30,30,30,0.7); 
+             display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;   
+            visibility: hidden;
+           
+        }
+
+       #input h1{
+           margin: 2px 25px 2px 25px;
+            font-size: 16px;
+            color: #E9573F;
+           text-align: center;
+           display: inline-block;
+        }
+       #input h2{
+           margin: 2px 25px 2px 25px;
+            font-size: 14px;
+            color: #545454;
+            text-align: center;
+           display: inline-block;
+        }
+        
+        #console{
+            visibility: hidden;
+            z-index: 10;
+            background-color: rgb(244,244,244);
+            width: 550px;
+            height: 550px;
+            border-radius: 25px; 
+            box-shadow: 0 5px 10px 5px rgba(30,30,30,0.5); 
+        }
+
+        #title{
+            align-content: center;
+            width: 300px;
+            
+        }
+         #bColor{
+            
+            width: 450px;
+        }
+          #bContent{
+            align-self: center;
+            height: 150px;
+            width: 450px;
+        }
+         #bNotes{
+            align-self: center;
+            height: 60px;
+            width: 450px;
+        }
+
+        #input{
+            align-content: center;
+            align-items: center;
+            margin: 25px;
+            position: relative;
+             }
+
+        @keyframes gradient{ 
+             0%{background-position:0 0}
+            100%{background-position:100% 0}
+        }
+        @-webkit-keyframes AnimationName {
+             0%{background-position:0 0}
+            100%{background-position:100% 0}
+        }
+
+        @-moz-keyframes AnimationName {
+             0%{background-position:0 0}
+            100%{background-position:100% 0}
+        }
+            
+        @-o-keyframes AnimationName {
+             0%{background-position:0 0}
+            100%{background-position:100% 0}
+        }
+
+        #input .gradient{
+          background:  linear-gradient(to right, #DA4453,#e9573F, #FFCE54,#e9573F,#DA4453,#e9573F);
+            padding: 0 0 2px 0;
+            border-radius: 10px 10px 5px 5px ;
+            margin:0 25px 15px 25px;
+            animation: gradient 5s linear infinite;
+            -webkit-animation: gradient 10s linear infinite;
+            -moz-animation: gradient 10s linear infinite;
+            -o-animation: gradient 10s linear infinite;
+            background-size: 500% auto;
+             width: 450px;
+
+        }
+        #input #exit{
+           position: absolute;
+            top: 0px;
+            right: 0px;
+            background: rgba(0,0,0,0.6);
+            -moz-border-radius: 50%;
+	        -webkit-border-radius: 50%;
+	        border-radius: 50%;
+            border-style: none;
+            height: 35px;
+            widows: 35px;
+            -moz-transform: scale(1);
+            -webkit-transform:scale(1);
+            transform: scale(1);
+            -moz-transition: all .5s ease;
+            -webkit-transition: all .5s ease;
+            transition: all .5 ease;
+        }
+        #input #exit:hover{
+            -moz-transform: scale(1.2);
+            -webkit-transform:scale(1.2);
+            transform: scale(1.2);
+        }
+
+        #exit img{
+            display: block;
+            margin: auto;
+        }
+       #input input{
+            background: rgba(232,232,232,1);
+            border-radius: 5px ;
+            border-style: none;
+            align-content: center;
+            text-align: center;
+            font-size: 18px;
+             -moz-box-shadow: inset 0 0 10px #DBDBDB;
+            -webkit-box-shadow: inset 0 0 10px #DBDBDB;
+            box-shadow: inset 0 0 10px #DBDBDB;
+        }
+        #input textarea{
+            background: rgba(232,232,232,1);
+            border-radius: 5px ;
+            border-style: none;
+            align-content: center;
+            text-align: center;
+            font-size: 18px;
+            resize: none;
+              -moz-box-shadow: inset 0 0 10px #DBDBDB;
+            -webkit-box-shadow: inset 0 0 10px #DBDBDB;
+            box-shadow: inset 0 0 10px #DBDBDB;
+        }
+        #input textarea:focus, #input input:focus,button:focus{
+            outline: 0;
+             -moz-box-shadow: 0 0 10px #e9573F;
+            -webkit-box-shadow: 0 0 10px #e9573F;
+            box-shadow: 0 0 10px #e9573F;
+        }
+
+        #input #submit{
+            padding: 20px 50px 20px 50px;
+            background: #DA4453;
+            border-radius: 10px;
+            border-color: #FFCE54;
+            border-width: 1px;
+             -moz-box-shadow: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            display: block;
+            margin-top: 25px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 18px;
+            color: white;
+    
+        }
+        #input #submit:hover{
+         -moz-box-shadow: 0 0 10px #e9573F;
+            -webkit-box-shadow: 0 0 10px #e9573F;
+            box-shadow: 0 0 10px #e9573F;
+    
+        }
+
+
+      
